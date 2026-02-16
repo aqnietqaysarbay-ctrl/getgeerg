@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audiophile - Checkout</title>
+    <style>
+      :root {
+        --orange: #d87d4a;
+        --black: #101010;
+        --gray-bg: #f1f1f1;
+        --white: #ffffff;
+        --border: #cfcfcf;
+      }
+
+      body {
+        font-family: "Manrope", sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+      }
+
+      .container {
+        max-width: 1110px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* Navbar stays consistent with previous design */
+      .navbar {
+        background: var(--black);
+        color: white;
+        padding: 32px 0;
+      }
+      .nav-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 30px;
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 2px;
+      }
+
+      .go-back {
+        margin: 80px 0 40px;
+        color: #7d7d7d;
+        cursor: pointer;
+      }
+
+      /* Checkout Layout */
+      .checkout-grid {
+        display: grid;
+        grid-template-columns: 1fr 350px;
+        gap: 30px;
+        margin-bottom: 120px;
+        align-items: start;
+      }
+
+      .checkout-form,
+      .summary-card {
+        background: var(--white);
+        border-radius: 8px;
+        padding: 48px;
+      }
+
+      h1 {
+        font-size: 32px;
+        letter-spacing: 1.1px;
+        margin-bottom: 40px;
+      }
+      h6 {
+        color: var(--orange);
+        letter-spacing: 1px;
+        margin-bottom: 16px;
+        font-size: 13px;
+      }
+
+      /* Inputs */
+      .input-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-bottom: 50px;
+      }
+      .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .input-group label {
+        font-size: 12px;
+        font-weight: 700;
+      }
+      .input-group input {
+        padding: 18px 24px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-family: inherit;
+        font-weight: 700;
+      }
+      .full-width {
+        margin-bottom: 24px;
+      }
+
+      /* Payment Styles */
+      .payment-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-bottom: 30px;
+      }
+      .radio-group {
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 18px 24px;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .radio-group.selected {
+        border-color: var(--orange);
+      }
+
+      /* Summary Sidebar */
+      .summary-card {
+        padding: 32px;
+      }
+      .summary-card h3 {
+        font-size: 18px;
+        letter-spacing: 1.3px;
+        margin-bottom: 32px;
+      }
+
+      .summary-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+      }
+      .item-info {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+      }
+      .item-img {
+        width: 64px;
+        height: 64px;
+        background: var(--gray-bg);
+        border-radius: 8px;
+      }
+      .item-name {
+        font-weight: 700;
+        font-size: 15px;
+        margin: 0;
+      }
+      .item-price {
+        color: #7d7d7d;
+        font-weight: 700;
+        margin: 0;
+      }
+      .qty {
+        color: #7d7d7d;
+        font-weight: 700;
+      }
+
+      .totals {
+        margin-top: 32px;
+      }
+      .total-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+      }
+      .total-row span {
+        color: #7d7d7d;
+        font-size: 15px;
+      }
+      .grand-total {
+        margin-top: 24px;
+      }
+      .grand-total strong {
+        color: var(--orange);
+      }
+
+      .btn-primary {
+        width: 100%;
+        background: var(--orange);
+        color: white;
+        border: none;
+        padding: 15px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-top: 32px;
+        cursor: pointer;
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container nav-flex">
+        <h1 class="logo">audiophile</h1>
+        <nav>
+          <a href="#">HOME</a>
+          <a href="#">HEADPHONES</a>
+          <a href="#">SPEAKERS</a>
+          <a href="#">EARPHONES</a>
+        </nav>
+        <div class="cart-icon">🛒</div>
+      </div>
+    </header>
+
+    <main class="container">
+      <p class="go-back">Go Back</p>
+
+      <form class="checkout-grid">
+        <section class="checkout-form">
+          <h1>CHECKOUT</h1>
+
+          <div class="form-section">
+            <h6>BILLING DETAILS</h6>
+            <div class="input-grid">
+              <div class="input-group">
+                <label>Name</label>
+                <input type="text" placeholder="Alexei Ward" />
+              </div>
+              <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="alexei@mail.com" />
+              </div>
+              <div class="input-group">
+                <label>Phone Number</label>
+                <input type="text" placeholder="+1 202-555-0136" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h6>SHIPPING INFO</h6>
+            <div class="input-group full-width">
+              <label>Address</label>
+              <input type="text" placeholder="1137 Williams Avenue" />
+            </div>
+            <div class="input-grid">
+              <div class="input-group">
+                <label>ZIP Code</label>
+                <input type="text" placeholder="10001" />
+              </div>
+              <div class="input-group">
+                <label>City</label>
+                <input type="text" placeholder="New York" />
+              </div>
+              <div class="input-group">
+                <label>Country</label>
+                <input type="text" placeholder="United States" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h6>PAYMENT DETAILS</h6>
+            <div class="payment-grid">
+              <label>Payment Method</label>
+              <div class="radio-options">
+                <div class="radio-group selected">
+                  <input type="radio" name="pay" id="emoney" checked />
+                  <label for="emoney">e-Money</label>
+                </div>
+                <div class="radio-group">
+                  <input type="radio" name="pay" id="cash" />
+                  <label for="cash">Cash on Delivery</label>
+                </div>
+              </div>
+            </div>
+            <div class="input-grid">
+              <div class="input-group">
+                <label>e-Money Number</label>
+                <input type="text" placeholder="238521993" />
+              </div>
+              <div class="input-group">
+                <label>e-Money PIN</label>
+                <input type="text" placeholder="6891" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="summary-card">
+          <h3>SUMMARY</h3>
+          <div class="summary-items">
+            <div class="summary-item">
+              <div class="item-info">
+                <div
+                  style="
+                    background-image: url(./assets/checkout/icon-cash-on-delivery.svg);
+                  "
+                  class="item-img"
+                ></div>
+                <div>
+                  <p class="item-name">XX99 MK II</p>
+                  <p class="item-price">$ 2,999</p>
+                </div>
+              </div>
+              <span class="qty">x1</span>
+            </div>
+          </div>
+
+          <div class="totals">
+            <div class="total-row">
+              <span>TOTAL</span> <strong>$ 5,396</strong>
+            </div>
+            <div class="total-row">
+              <span>SHIPPING</span> <strong>$ 50</strong>
+            </div>
+            <div class="total-row">
+              <span>VAT (INCLUDED)</span> <strong>$ 1,079</strong>
+            </div>
+            <div class="total-row grand-total">
+              <span>GRAND TOTAL</span> <strong>$ 5,446</strong>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary">CONTINUE & PAY</button>
+        </aside>
+      </form>
+    </main>
+  </body>
+</html>
